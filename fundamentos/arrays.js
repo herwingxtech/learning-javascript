@@ -41,7 +41,7 @@ let copia = frutas.slice(0, 2);
 console.log(copia); // ['Manzana', 'Mango']
 
 // 8. forEach() - Itera sobre los elementos del array
-frutas.forEach((fruta) => console.log(fruta));
+frutas.forEach((fruta, n) => console.log(fruta, n+1));
 
 // 9. map() - Crea un nuevo array aplicando una función a cada elemento
 let mayusculas = frutas.map((fruta) => fruta.toUpperCase());
