@@ -59,7 +59,7 @@ for (let i = 1; i <= 10; i++) {
 let text = 'Hola Mundo';
 let textInvertido = '';
 for (let i = text.length - 1; i >= 0; i--) {
-  textInvertido += text[i];
+  textInvertido += text[i];                         
 }
 console.log('textInvertido:', textInvertido);
 
@@ -82,3 +82,69 @@ for (let i = 0; i < numbers.length; i++) {
   }
 }
 console.log({ numbersGreaterThan10 });
+
+// Ejemplos adicionales de bucles
+
+// 1. while - Ejecuta el bloque mientras la condición sea verdadera
+let count = 1;
+while (count <= 5) {
+  console.log(`while: ${count}`);
+  count++;
+}
+
+// 2. do...while - Ejecuta el bloque al menos una vez, luego verifica la condición
+let num = 1;
+do {
+  console.log(`do...while: ${num}`);
+  num++;
+} while (num <= 5);
+
+// 3. for...of - Itera sobre elementos de un iterable (como arrays)
+let frutas = ['Manzana', 'Banana', 'Naranja'];
+for (let fruta of frutas) {
+  console.log(`for...of: ${fruta}`);
+}
+
+// 4. for...in - Itera sobre las propiedades de un objeto
+let persona = { nombre: 'Juan', edad: 30, ciudad: 'Madrid' };
+for (let propiedad in persona) {
+  console.log(`for...in: ${propiedad} = ${persona[propiedad]}`);
+}
+
+// 5. break - Termina un bucle antes de que se complete
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    console.log('Se detuvo el bucle en 5');
+    break;
+  }
+  console.log(`break: ${i}`);
+}
+
+// 6. continue - Salta a la siguiente iteración del bucle
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    continue; // Salta los números pares
+  }
+  console.log(`continue: ${i}`);
+}
+
+// 7. forEach - Itera sobre los elementos de un array (método de array)
+frutas.forEach((fruta, index) => {
+  console.log(`forEach: ${index} - ${fruta}`);
+});
+
+// 8. map - Crea un nuevo array aplicando una función a cada elemento (método de array)
+let cuadrados = numeros.map((num) => num * num);
+console.log(`map: ${cuadrados}`);
+
+// 9. filter - Crea un nuevo array con elementos que cumplen una condición (método de array)
+let mayoresA3 = numeros.filter((num) => num > 3);
+console.log(`filter: ${mayoresA3}`);
+
+// 10. reduce - Reduce un array a un único valor (método de array)
+let sumaTotal = numeros.reduce((acumulador, num) => acumulador + num, 0);
+console.log(`reduce: ${sumaTotal}`);
+
+/*
+Estos ejemplos cubren los bucles más comunes y métodos de iteración en JavaScript.
+*/
