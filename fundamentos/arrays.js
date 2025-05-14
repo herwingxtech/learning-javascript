@@ -5,7 +5,9 @@ Un array es una estructura de datos que permite almacenar múltiples valores en 
 
 // Crear un array
 let frutas = ['Manzana', 'Banana', 'Naranja'];
-
+frutas.forEach((fruta, indice, arr) => {
+    console.log("Prueba "+ fruta, indice, arr);
+})
 // Acceder a elementos del array
 console.log(frutas[0]); // Manzana
 console.log(frutas[1]); // Banana
@@ -33,8 +35,8 @@ let indice = frutas.indexOf('Banana');
 console.log(indice); // 1
 
 // 6. splice() - Agrega o elimina elementos en una posición específica
-frutas.splice(1, 1, 'Mango'); // Reemplaza 'Banana' con 'Mango'
-console.log(frutas); // ['Manzana', 'Mango', 'Naranja']
+frutas.splice(1, 1, "Mango"); // Reemplaza 'Banana' con 'Mango'
+console.log("Array borrado: " + frutas); // ['Manzana', 'Mango', 'Naranja']
 
 // 7. slice() - Crea una copia de una parte del array
 let copia = frutas.slice(0, 2);
