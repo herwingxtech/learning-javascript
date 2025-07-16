@@ -1,91 +1,227 @@
 /*
-Clase 18 - Ejercicios: primeros pasos
-Vídeo: https://youtu.be/1glVfFxj8a4?t=4733
+🚀 FUNDAMENTOS DE JAVASCRIPT - TIPOS PRIMITIVOS
+📚 Clase 18 - Ejercicios: primeros pasos
+🎥 Vídeo: https://youtu.be/1glVfFxj8a4?t=4733
+
+Los tipos primitivos son los tipos de datos más básicos en JavaScript.
+Son inmutables y se almacenan por valor, no por referencia.
 */
 
-// 1. Escribe un comentario en una línea
+// ! ========================================
+// ! 📝 COMENTARIOS EN JAVASCRIPT
+// ! ========================================
 
-//Hola esto es un comentario en una línea
+// ✅ 1. Comentario en una línea
+// Este es un comentario de una sola línea - útil para explicaciones cortas
 
-// 2. Escribe un comentario en varias líneas
-
+// ✅ 2. Comentario en múltiples líneas
 /* 
-Este es un comentario en varias líneas
+   Este es un comentario de múltiples líneas
+   Útil para explicaciones más largas o documentación
+   También se usa para comentar bloques de código
 */
 
-// 3. Declara variables con valores asociados a todos los datos de tipo primitivos
+// ! ========================================
+// ! 🎯 TIPOS PRIMITIVOS EN JAVASCRIPT
+// ! ========================================
 
-let name = "Eduardo"; // String
+// ? Hay 7 tipos primitivos en JavaScript:
+// ? string, number, boolean, undefined, symbol, bigint, null
 
-let number = 10; // Number
+// ✅ 3. Declaración de variables con todos los tipos primitivos
 
-let boolean = true; // Boolean
+// 📝 STRING - Cadenas de texto
+let userName = "Eduardo"; // Comillas dobles
+let userLastName = 'Pérez'; // Comillas simples
+let userFullName = `${userName} ${userLastName}`; // Template literals
 
-let undefined; // Undefined
+// 🔢 NUMBER - Números (enteros y decimales)
+let age = 25;
+let height = 1.75;
+let temperature = -5;
+let infinity = Infinity;
+let notANumber = NaN;
 
-let symbol = Symbol("b"); // Symbol
+// ✅ BOOLEAN - Valores verdadero/falso
+let isStudent = true;
+let isWorking = false;
 
-let bigInt = 10n; // BigInt
+// ❓ UNDEFINED - Variable declarada pero sin valor asignado
+let undefinedVariable; // Automáticamente es undefined
+let explicitUndefined = undefined;
 
-let nullValue = null; // Null
+// 🔑 SYMBOL - Identificador único (ES6+)
+let uniqueId = Symbol("id");
+let anotherUniqueId = Symbol("id"); // Diferente al anterior aunque tengan la misma descripción
 
+// 🔢 BIGINT - Números enteros muy grandes (ES2020+)
+let bigNumber = 123456789012345678901234567890n;
+let anotherBigInt = BigInt(123456789012345678901234567890);
 
-// 4. Imprime por consola el valor de todas las variables
+// ⚫ NULL - Ausencia intencional de valor
+let emptyValue = null;
 
-console.log(name)
+// ! ========================================
+// ! 🖥️ MOSTRAR VALORES EN CONSOLA
+// ! ========================================
 
-console.log(number)
+// ✅ 4. Imprimir valores de todas las variables
+console.log("=== VALORES DE LAS VARIABLES ===");
+console.log("👤 Nombre:", userName);
+console.log("👤 Apellido:", userLastName);
+console.log("👤 Nombre completo:", userFullName);
+console.log("🎂 Edad:", age);
+console.log("📏 Altura:", height);
+console.log("🌡️ Temperatura:", temperature);
+console.log("♾️ Infinito:", infinity);
+console.log("❌ No es un número:", notANumber);
+console.log("✅ Es estudiante:", isStudent);
+console.log("💼 Está trabajando:", isWorking);
+console.log("❓ Variable indefinida:", undefinedVariable);
+console.log("❓ Undefined explícito:", explicitUndefined);
+console.log("🔑 ID único:", uniqueId);
+console.log("🔑 Otro ID único:", anotherUniqueId);
+console.log("🔢 Número grande:", bigNumber);
+console.log("🔢 Otro BigInt:", anotherBigInt);
+console.log("⚫ Valor nulo:", emptyValue);
 
-console.log(boolean)
+// ! ========================================
+// ! 🔍 VERIFICAR TIPOS DE DATOS
+// ! ========================================
 
-console.log(undefined);
+// ✅ 5. Mostrar el tipo de cada variable
+console.log("\n=== TIPOS DE DATOS ===");
+console.log("typeof userName:", typeof userName);
+console.log("typeof age:", typeof age);
+console.log("typeof height:", typeof height);
+console.log("typeof isStudent:", typeof isStudent);
+console.log("typeof undefinedVariable:", typeof undefinedVariable);
+console.log("typeof uniqueId:", typeof uniqueId);
+console.log("typeof bigNumber:", typeof bigNumber);
+console.log("typeof emptyValue:", typeof emptyValue); // ⚠️ Retorna "object" (bug histórico de JS)
 
-console.log(symbol)
+// 💡 Demostración interactiva de tipos
+console.log("\n=== DEMOSTRACIÓN INTERACTIVA ===");
 
-console.log(bigInt)
+// 🔄 Comparación de symbols
+console.log("¿Los symbols son iguales?", uniqueId === anotherUniqueId); // false
 
-console.log(nullValue)
+// 🔢 Operaciones con BigInt
+console.log("BigInt + 1n =", bigNumber + 1n);
+// console.log(bigNumber + 1); // ❌ Error: no se puede mezclar BigInt con Number
 
-// 5. Imprime por consola el tipo de todas las variables
-console.log(typeof (name))
+// ⚫ Diferencia entre null y undefined
+console.log("null == undefined:", null == undefined); // true (comparación débil)
+console.log("null === undefined:", null === undefined); // false (comparación estricta)
 
-console.log(typeof (number))
+// ! ========================================
+// ! 🔄 MODIFICACIÓN DE VARIABLES (let)
+// ! ========================================
 
-console.log(typeof (boolean))
+// ✅ 6. Modificar variables con valores del mismo tipo
+console.log("\n=== MODIFICANDO VARIABLES ===");
+userName = "Herwing";
+age = 30;
+isStudent = false;
+// undefinedVariable sigue siendo undefined
+uniqueId = Symbol("newId");
+bigNumber = 999999999999999999999999999999n;
+// emptyValue sigue siendo null
 
-console.log(typeof (undefined));
+console.log("👤 Nuevo nombre:", userName);
+console.log("🎂 Nueva edad:", age);
+console.log("✅ ¿Es estudiante?:", isStudent);
 
-console.log(typeof (symbol))
+// ✅ 7. Modificar variables con valores de diferente tipo
+console.log("\n=== CAMBIO DE TIPOS ===");
+let flexibleVar = "Inicialmente string";
+console.log("Valor inicial:", flexibleVar, "- Tipo:", typeof flexibleVar);
 
-console.log(typeof (bigInt))
+flexibleVar = 42;
+console.log("Ahora es número:", flexibleVar, "- Tipo:", typeof flexibleVar);
 
-console.log(typeof (nullValue))
-// 6. A continuación, modifica los valores de las variables por otros del mismo tipo
-name = "Herwing";
-number = 15;
-boolean = false;
-// undefined = ;
-symbol = Symbol("c");
-bigInt = 20n;
-// nullValue = ;
-// 7. A continuación, modifica los valores de las variables por otros de distinto tipo
+flexibleVar = true;
+console.log("Ahora es boolean:", flexibleVar, "- Tipo:", typeof flexibleVar);
 
+flexibleVar = null;
+console.log("Ahora es null:", flexibleVar, "- Tipo:", typeof flexibleVar);
 
-// 8. Declara constantes con valores asociados a todos los tipos de datos primitivos
-const nameConst = "Eduardo"; // String
+// ! ========================================
+// ! 🔒 CONSTANTES (const)
+// ! ========================================
 
-const numberConst = 10; // Number
+// ✅ 8. Declarar constantes con todos los tipos primitivos
+console.log("\n=== CONSTANTES ===");
 
-const booleanConst = true; // Boolean
+const COMPANY_NAME = "TechCorp"; // String constante
+const MAX_USERS = 1000; // Number constante
+const IS_PRODUCTION = true; // Boolean constante
+// const UNDEFINED_CONST; // ❌ Error: las constantes deben inicializarse
+const UNIQUE_TOKEN = Symbol("token"); // Symbol constante
+const MAX_SAFE_INTEGER = 9007199254740991n; // BigInt constante
+const DEFAULT_VALUE = null; // Null constante
 
-// const undefinedConst; // Undefined
+console.log("🏢 Empresa:", COMPANY_NAME);
+console.log("👥 Máximo usuarios:", MAX_USERS);
+console.log("🚀 ¿Es producción?:", IS_PRODUCTION);
+console.log("🔑 Token único:", UNIQUE_TOKEN);
+console.log("🔢 Entero máximo seguro:", MAX_SAFE_INTEGER);
+console.log("⚫ Valor por defecto:", DEFAULT_VALUE);
 
-const symbolConst = Symbol("b"); // Symbol
-const bigIntConst = 10n; // BigInt
+// ! ========================================
+// ! ❌ ERRORES COMUNES
+// ! ========================================
 
-const nullValueConst = null; // Null
+// ✅ 9. Intentar modificar constantes (esto causará errores)
+console.log("\n=== INTENTANDO MODIFICAR CONSTANTES ===");
 
+try {
+  // COMPANY_NAME = "NewCorp"; // ❌ TypeError: Assignment to constant variable
+  console.log("❌ No se puede modificar una constante");
+} catch (error) {
+  console.log("Error capturado:", error.message);
+}
 
-// 9. A continuación, modifica los valores de las constantes
+// ✅ 10. Líneas que producen errores (comentadas para evitar que se ejecuten)
 
-// 10. Comenta las líneas que produzcan algún tipo de error al ejecutarse
+// ❌ Errores comunes comentados:
+// const UNINITIALIZED; // Error: Missing initializer in const declaration
+// bigNumber + 1; // Error: Cannot mix BigInt and other types
+// Symbol("a") === Symbol("a"); // false - cada Symbol es único
+// undefined.toString(); // Error: Cannot read property of undefined
+// null.length; // Error: Cannot read property of null
+
+// 💡 Consejos y buenas prácticas
+console.log("\n=== 💡 CONSEJOS Y BUENAS PRÁCTICAS ===");
+console.log("✅ Usa 'const' por defecto, 'let' cuando necesites reasignar");
+console.log("✅ Evita 'var' en código moderno");
+console.log("✅ Usa nombres descriptivos para variables");
+console.log("✅ Usa MAYÚSCULAS para constantes que no cambiarán");
+console.log("✅ Siempre inicializa las variables");
+console.log("✅ Usa === en lugar de == para comparaciones estrictas");
+
+// 🎯 Ejercicio interactivo
+console.log("\n=== 🎯 EJERCICIO INTERACTIVO ===");
+const userAge = 25;
+const canVote = userAge >= 18;
+const yearsToVote = canVote ? 0 : 18 - userAge;
+
+console.log(`👤 Edad del usuario: ${userAge}`);
+console.log(`🗳️ ¿Puede votar?: ${canVote}`);
+console.log(`⏰ Años para votar: ${yearsToVote}`);
+
+// 🔍 Verificación final de tipos
+console.log("\n=== 🔍 VERIFICACIÓN FINAL ===");
+const allTypes = {
+  string: "texto",
+  number: 42,
+  boolean: true,
+  undefined: undefined,
+  symbol: Symbol("test"),
+  bigint: 123n,
+  null: null
+};
+
+Object.entries(allTypes).forEach(([key, value]) => {
+  console.log(`${key}: ${value} (${typeof value})`);
+});
