@@ -357,14 +357,14 @@ console.log("🎯 Días sobre promedio:", goodDays);
 // 🎮 Ejercicio 3: Manipulación de texto
 console.log("\n📝 EJERCICIO 3: Manipulación de Texto");
 let text = "JavaScript es un lenguaje de programación muy versátil";
-let words = text.split(" ");
+let textWords = text.split(" ");
 
 let wordAnalysis = {
-    totalWords: words.length,
-    longestWord: words.reduce((longest, word) => word.length > longest.length ? word : longest),
-    shortestWord: words.reduce((shortest, word) => word.length < shortest.length ? word : shortest),
-    averageLength: words.reduce((sum, word) => sum + word.length, 0) / words.length,
-    wordsWithMoreThan5Chars: words.filter(word => word.length > 5)
+    totalWords: textWords.length,
+    longestWord: textWords.reduce((longest, word) => word.length > longest.length ? word : longest),
+    shortestWord: textWords.reduce((shortest, word) => word.length < shortest.length ? word : shortest),
+    averageLength: textWords.reduce((sum, word) => sum + word.length, 0) / textWords.length,
+    wordsWithMoreThan5Chars: textWords.filter(word => word.length > 5)
 };
 
 console.log("📝 Texto:", text);

@@ -23,7 +23,7 @@ Son inmutables y se almacenan por valor, no por referencia.
 
 // ! ========================================
 // ! 🎯 TIPOS PRIMITIVOS EN JAVASCRIPT
-// ! ========================================
+// ! ========================================                       
 
 // ? Hay 7 tipos primitivos en JavaScript:
 // ? string, number, boolean, undefined, symbol, bigint, null
