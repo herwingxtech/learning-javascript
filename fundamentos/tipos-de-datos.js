@@ -16,6 +16,18 @@ console.log("🔹 PRIMITIVOS: string, number, boolean, undefined, null, symbol, 
 console.log("🔸 NO PRIMITIVOS: object, array, function, date, regexp, etc.");
 
 // ! ========================================
+// ! 💡 ¿QUÉ SIGNIFICA "INMUTABLE"?
+// ! ========================================
+
+console.log("\n=== 💡 ¿QUÉ SIGNIFICA 'INMUTABLE'? ===");
+console.log("Los tipos primitivos son INMUTABLES. Esto significa que su valor no puede ser alterado una vez creado.");
+let miString = "Hola";
+miString[0] = "B"; // Esto no funciona, el string original no cambia.
+console.log("Intentar cambiar 'Hola' a 'Bola' directamente:", miString);
+console.log("Para 'cambiar' un primitivo, se crea un nuevo valor y se reasigna la variable.");
+console.log("Los objetos, en cambio, son MUTABLES: su contenido interno sí puede cambiar.");
+
+// ! ========================================
 // ! 🎯 TIPOS PRIMITIVOS
 // ! ========================================
 
