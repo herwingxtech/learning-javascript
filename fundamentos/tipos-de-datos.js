@@ -293,6 +293,160 @@ valoresTruthy.forEach(valor => {
 });
 
 // ! ========================================
+// ! ❌ VALORES FALSY EN JAVASCRIPT
+// ! ========================================
+
+console.log("\n=== ❌ VALORES FALSY EN JAVASCRIPT ===");
+console.log("Los valores FALSY son aquellos que se evalúan como 'false' en contextos booleanos.");
+console.log("En JavaScript, solo hay 6 valores falsy:");
+
+// ✅ 1. false - El valor booleano false
+console.log("\n--- ❌ 1. FALSE ---");
+console.log("Boolean(false):", Boolean(false));
+console.log("!!false:", !!false);
+console.log("if (false) { ... } → No se ejecuta");
+
+// ✅ 2. 0 - El número cero
+console.log("\n--- ❌ 2. CERO (0) ---");
+console.log("Boolean(0):", Boolean(0));
+console.log("!!0:", !!0);
+console.log("Boolean(-0):", Boolean(-0)); // También es falsy
+console.log("Boolean(+0):", Boolean(+0)); // También es falsy
+
+// ✅ 3. "" - String vacío
+console.log("\n--- ❌ 3. STRING VACÍO ('') ---");
+console.log("Boolean(''):", Boolean(''));
+console.log("!!'':", !!'');
+console.log("Boolean(\"\"):", Boolean(""));
+console.log("Boolean(``):", Boolean(``)); // Template literal vacío también es falsy
+
+// ✅ 4. null - Ausencia intencional de valor
+console.log("\n--- ❌ 4. NULL ---");
+console.log("Boolean(null):", Boolean(null));
+console.log("!!null:", !!null);
+
+// ✅ 5. undefined - Variable sin valor asignado
+console.log("\n--- ❌ 5. UNDEFINED ---");
+console.log("Boolean(undefined):", Boolean(undefined));
+console.log("!!undefined:", !!undefined);
+
+// ✅ 6. NaN - Not a Number
+console.log("\n--- ❌ 6. NaN ---");
+console.log("Boolean(NaN):", Boolean(NaN));
+console.log("!!NaN:", !!NaN);
+
+// 📝 Demostración práctica de valores falsy
+console.log("\n--- 🧪 DEMOSTRACIÓN PRÁCTICA ---");
+
+// Función para probar si un valor es falsy
+function esFalsy(valor) {
+    return !valor;
+}
+
+// Función para probar si un valor es truthy
+function esTruthy(valor) {
+    return !!valor;
+}
+
+let valoresParaProbar = [
+    false, 0, "", null, undefined, NaN,
+    true, 1, "hola", [], {}, function() {}, "0", "false"
+];
+
+console.log("🔍 Análisis de valores falsy vs truthy:");
+valoresParaProbar.forEach(valor => {
+    const esFalsyResultado = esFalsy(valor);
+    const esTruthyResultado = esTruthy(valor);
+    const tipo = typeof valor;
+    
+    // Función helper para serializar valores especiales
+    const valorSerializado = 
+        valor === null ? "null" :
+        valor === undefined ? "undefined" :
+        typeof valor === 'function' ? "function() {}" :
+        JSON.stringify(valor);
+    
+    console.log(`  ${valorSerializado} (${tipo}) → Falsy: ${esFalsyResultado}, Truthy: ${esTruthyResultado}`);
+});
+
+// 📝 Casos especiales y curiosidades
+console.log("\n--- 🎯 CASOS ESPECIALES ---");
+
+// String "0" y "false" son truthy
+console.log("📝 String '0' es truthy:", Boolean("0"));
+console.log("📝 String 'false' es truthy:", Boolean("false"));
+console.log("📝 String con espacios es truthy:", Boolean("   "));
+
+// Arrays vacíos son truthy
+console.log("📚 Array vacío [] es truthy:", Boolean([]));
+console.log("📚 Array con elementos es truthy:", Boolean([1, 2, 3]));
+
+// Objetos vacíos son truthy
+console.log("🏠 Objeto vacío {} es truthy:", Boolean({}));
+console.log("🏠 Objeto con propiedades es truthy:", Boolean({nombre: "Juan"}));
+
+// Funciones son truthy
+console.log("⚙️ Función es truthy:", Boolean(function() {}));
+console.log("⚙️ Función flecha es truthy:", Boolean(() => {}));
+
+// 📝 Ejemplos prácticos de uso
+console.log("\n--- 💼 EJEMPLOS PRÁCTICOS ---");
+
+// Ejemplo 1: Validación de entrada
+function validarEntrada(valor) {
+    if (!valor) {
+        return "Error: El valor es requerido";
+    }
+    return "✅ Valor válido";
+}
+
+console.log("🔍 Validación de entrada:");
+console.log("  '' →", validarEntrada(""));
+console.log("  null →", validarEntrada(null));
+console.log("  'texto' →", validarEntrada("texto"));
+
+// Ejemplo 2: Valores por defecto
+function obtenerNombre(nombre) {
+    return nombre || "Usuario anónimo";
+}
+
+console.log("👤 Valores por defecto:");
+console.log("  obtenerNombre('') →", obtenerNombre(""));
+console.log("  obtenerNombre(null) →", obtenerNombre(null));
+console.log("  obtenerNombre('Juan') →", obtenerNombre("Juan"));
+
+// Ejemplo 3: Verificación de propiedades
+let usuario = {
+    nombre: "",
+    email: "usuario@ejemplo.com",
+    edad: 0
+};
+
+console.log("👤 Verificación de propiedades:");
+console.log("  usuario.nombre existe:", !!usuario.nombre);
+console.log("  usuario.email existe:", !!usuario.email);
+console.log("  usuario.edad existe:", !!usuario.edad);
+
+// 📝 Operador de coalescencia nula (??)
+console.log("\n--- 🆕 OPERADOR ?? (COALESCENCIA NULA) ---");
+console.log("El operador ?? solo considera null y undefined como falsy:");
+
+console.log("  '' || 'default' →", "" || "default");
+console.log("  '' ?? 'default' →", "" ?? "default");
+
+console.log("  0 || 'default' →", 0 || "default");
+console.log("  0 ?? 'default' →", 0 ?? "default");
+
+console.log("  false || 'default' →", false || "default");
+console.log("  false ?? 'default' →", false ?? "default");
+
+console.log("  null || 'default' →", null || "default");
+console.log("  null ?? 'default' →", null ?? "default");
+
+console.log("  undefined || 'default' →", undefined || "default");
+console.log("  undefined ?? 'default' →", undefined ?? "default");
+
+// ! ========================================
 // ! 🧪 VERIFICACIÓN DE TIPOS
 // ! ========================================
 
