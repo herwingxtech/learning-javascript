@@ -184,14 +184,14 @@ Object.entries(vocalCount).forEach(([vocal, count]) => {
 // 📝 Análisis adicional del texto
 let consonants = 0;
 let spaces = 0;
-let numbers = 0;
+let digitCount = 0;
 
 for (let i = 0; i < texto.length; i++) {
     let char = texto[i].toLowerCase();
     if (char === ' ') {
         spaces++;
     } else if (char >= '0' && char <= '9') {
-        numbers++;
+        digitCount++;
     } else if (char >= 'a' && char <= 'z' && !vocales.includes(char)) {
         consonants++;
     }
@@ -202,7 +202,7 @@ console.log(`   📏 Longitud total: ${texto.length}`);
 console.log(`   🔤 Vocales: ${contador}`);
 console.log(`   🔤 Consonantes: ${consonants}`);
 console.log(`   ⭐ Espacios: ${spaces}`);
-console.log(`   🔢 Números: ${numbers}`);
+console.log(`   🔢 Números: ${digitCount}`);
 
 // ! ========================================
 // ! ✖️ MULTIPLICACIÓN Y PRODUCTOS
